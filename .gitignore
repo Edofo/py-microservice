@@ -1,0 +1,30 @@
+# Ignore Python virtual environments
+venv/
+
+# Ignore environment-specific files
+.env
+
+# Ignore local development settings
+local_settings/
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore the "pycache" directory
+__pycache__/
+
+# Ignore IDE-specific files and directories
+.vscode/
+.idea/
+
+# Ignore logs
+*.log
+
+# Ignore Python package build directories
+build/
+dist/
+*.egg-info/
+
+# Ignore user-specific settings
+.history/
+.DS_Store

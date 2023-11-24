@@ -1,6 +1,18 @@
 version: "3.7"
 
 services:
+    database:
+        container_name: microservice-postgres
+        hostname: microservice-postgres
+        image: postgres:14.2
+        restart: unless-stopped
+        ports:
+        - 5432:5432
+        environment:
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+            POSTGRES_DB: database
+
     movies_service:
         build: ./movies-service
         command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
@@ -8,6 +20,8 @@ services:
             - ./movies-service/:/app/
         ports:
             - 8001:8000
+        depends_on:
+            - database
 
     users_service:
         build: ./users-service
@@ -16,6 +30,8 @@ services:
             - ./users-service/:/app/
         ports:
             - 8002:8000
+        depends_on:
+            - database
 
     nginx:
         image: nginx:latest
@@ -26,3 +42,4 @@ services:
         depends_on:
             - movies_service
             - users_service
+
