@@ -6,25 +6,10 @@ This is a simple FastAPI-based microservice project organized with controllers a
 
 The project is structured as follows:
 
-microservices/
-├── app/
-│ ├── init.py
-│ ├── main.py
-│ ├── controllers/
-│ │ ├── init.py
-│ │ ├── users.py
-│ ├── services/
-│ │ ├── init.py
-│ │ ├── users.py
-├── requirements.txt
-├── Dockerfile
-
-markdown
-Copy code
-
 -   `app/` contains the main application code.
 -   `controllers/` folder contains controllers responsible for handling HTTP requests.
 -   `services/` folder contains services that encapsulate business logic.
+-   `db/`folder contains the db systems
 
 ## Getting Started
 

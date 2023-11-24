@@ -28,3 +28,5 @@ dist/
 # Ignore user-specific settings
 .history/
 .DS_Store
+
+__init__.py
